@@ -42,7 +42,7 @@ const greatVibes = Abril_Fatface({
 export default function LandingSlider() {
      const [activeIndex, setActiveIndex] = useState(0);
     return (
-        <div className="relative w-full h-[500px] xs:h-[600px] overflow-hidden bg-gradient-to-bl from-[#171717] via-[#464646] to-[#171717]">
+        <div className="relative w-full h-[500px] xs:h-[600px] overflow-hidden bg-gradient-to-bl pt-4 from-[#171717] via-[#464646] to-[#171717]">
             <Swiper
                 modules={[Autoplay]}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
