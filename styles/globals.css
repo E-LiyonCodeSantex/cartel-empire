@@ -40,3 +40,13 @@ body {
 .shadow-white-40 {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
+
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

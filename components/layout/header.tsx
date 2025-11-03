@@ -32,7 +32,7 @@ export default function Header() {
                         className="outline-none p-2 w-full max:w-[600px] min:w-300px] text-gray-700"
                     />
                     <button
-                        className="bg-primary w-[150px] h-full p-[15px]"
+                        className="bg-primary hover:bg-blue-700 w-[150px] h-full p-[15px]"
                     >Search</button>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Header() {
                         )}
                     </div>
                     <li className='font-bold pointer hover:text-hoverSecondary cursor-pointer '>Ouds </li>
-                    <li className='font-bold pointer hover:text-hoverSecondary cursor-pointer '>Brands </li>
+                    <li className='font-bold pointer hover:textprimary cursor-pointer '>Brands</li>
                     <li className='font-bold pointer hover:text-hoverSecondary cursor-pointer '>Arabic</li>
                     <li className='font-bold pointer hover:text-hoverSecondary cursor-pointer '>French</li>
                 </ul>

@@ -61,15 +61,15 @@ export default function LandingSlider() {
                                     animate={{ x: 0, opacity: 1 }}
                                     transition={{ delay: 1, duration: 0.8 }}
 
-                                    className="relative flex flex-col w-full justify-center items-start pl-4 xs:pl-8 gap-4 z-10 rounded-md bg-white/10 p-4"
+                                    className="relative flex flex-col w-full justify-center items-start pl-4 xs:pl-8 gap-4 z-10 rounded-md bg-black/40 p-4"
                                 >
-                                    <h1 className="font-bold text-2xl text-[#2CA6A6]">{slide.heading}</h1>
+                                    <h1 className="font-bold text-2xl text-gray-300">{slide.heading}</h1>
 
                                     <div className="flex gap-2 flex-col items-center justify-center">
-                                        <h1 className={`${greatVibes.className} font-extrabold text-4xl flex flex-nowrap text-[#E07529]`}>
+                                        <h1 className={`${greatVibes.className} font-extrabold text-4xl flex flex-nowrap text-secondary`}>
                                             {slide.name1}
                                         </h1>
-                                        <h1 className={`${greatVibes.className} font-extrabold text-4xl flex flex-nowrap text-[#E07529]`}>
+                                        <h1 className={`${greatVibes.className} font-extrabold text-4xl flex flex-nowrap text-secondary`}>
                                             {slide.name2}
                                         </h1>
                                     </div>
