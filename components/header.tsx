@@ -1,7 +1,7 @@
 import { Great_Vibes } from 'next/font/google';
 import { MagnifyingGlassIcon, HeartIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
-import Sidebar from './sidebar';
+import Sidebar from '@/components/sidebar';
 
 const greatVibes = Great_Vibes({
     subsets: ['latin'],
@@ -9,15 +9,17 @@ const greatVibes = Great_Vibes({
 });
 
 export default function Header() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () =>{setIsSidebarOpen(prev => !prev);}
 
     return (
-        <header className='w-full relative'>
-            <div className="flex justify-around items-start xs:items-center w-full h-[150px] xs:h-[100px] gap-2 sm:gap-4 py-8 xs:py-2 bg-gray-100 relative fixed top-0 z-50 border-b-2 border-gray-300">
-                <Sidebar />
+        <header className='w-full'>
+            <div className="flex justify-around items-start xs:items-center w-full h-[150px] xs:h-[100px] gap-2 py-8 xs:py-2 bg-gray-100 relative z-50 border-b-2 border-gray-300">
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
                 {/*<Sidebar />*/}
-                <div className="flex gap-2 items-center justify-center flex-wrap">
+                <div className="flex gap-2 items-center justify-center flex-wrap p-0 w-fit">
                     <h1 className={`${greatVibes.className} font-extrabold text-2xl xs:text-3xl flex flex-nowrap text-[#E07529]`}>Empire</h1>
 
                     <h1 className={`${greatVibes.className} font-extrabold text-2xl xs:text-3xl flex flex-nowrap text-gray-600`}>Fragrance</h1>
@@ -47,34 +49,33 @@ export default function Header() {
             </div>
 
             <div className="hidden md:flex justify-around items-center w-full absolute top-[150px] xs:top-[100px] z-40">
-
-                <ul className='flex gap-4 text-gray-500 bg-gray-100 py-2 px-4 rounded-b-3xl shadow-md'>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Today Deals</li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Spray</li>
+                <ul className='flex gap-4 text-gray-700 bg-gray-100 py-2 px-4 rounded-b-3xl shadow-md'>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Today Deals</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Spray</li>
                     <div className='relative group '>
                         <li onClick={() => setIsOpen(!isOpen)}
-                            className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms] text-gray-500'>Perfume</li>
+                            className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer  text-gray-700'>Perfume</li>
                         {isOpen && (
                             <ul className='hidden group-hover:flex flex-col justify-center items-start gap-2 absolute bg-gray-100 w-[200px] -left-15 rounded-b-xl py-4 px-6 shadow-lg z-50'>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Oil perfumes </li>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Luxury perfumes </li>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Designer's perfumes</li>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Women's perfumes</li>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Men's perfumes</li>
-                                <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Unisex Perfume</li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Oil perfumes </li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Luxury perfumes </li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Designer's perfumes</li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Women's perfumes</li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Men's perfumes</li>
+                                <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Unisex Perfume</li>
                             </ul>
                         )}
                     </div>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Ouds </li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Brands</li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Arabic</li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>French</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Ouds </li>
+                    <li className='font-bold pointer hover:text[#2CA6A6] cursor-pointer '>Brands</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Arabic</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>French</li>
                 </ul>
 
-                <ul className='flex gap-4 text-gray-500 bg-gray-100 py-2 px-4 rounded-b-3xl shadow-md'>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>My Account</li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>Contact Us</li>
-                    <li className='font-bold pointer hover:text-black cursor-pointer tansition duration-[800ms]'>About Us</li>
+                <ul className='flex gap-4 text-gray-700 bg-gray-100 py-2 px-4 rounded-b-3xl shadow-md'>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>My Account</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>Contact Us</li>
+                    <li className='font-bold pointer hover:text-[#2CA6A6] cursor-pointer '>About Us</li>
                 </ul>
 
             </div>
