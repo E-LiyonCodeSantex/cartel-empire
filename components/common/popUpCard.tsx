@@ -1,4 +1,5 @@
 import { CheckIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 import { useRouter } from 'next/router';
 import { use, useState } from "react";
 
@@ -32,12 +33,16 @@ const PopUpCard = ({ quantity, total, onClose }: PopUpCardProps) => {
                                 onClose(); // close the pop-up
                                 router.back(); // go back to previous page
                             }}
-                            className="bg-primary text-white font-bold p-2 rounded hover:bg-[#238888]"
+                            className="bg-primary text-white font-bold p-2 rounded hover:bg-hoverPrimary"
                         >Continue Shopping</button>
+                       <Link href="/cart">
                         <button
-                            onClick={onClose}
+                            onClick={() =>{
+                                onClose
+                            }}
                             className="bg-gray-500 text-white font-bold p-2 rounded hover:bg-gray-600"
                         >View Cart</button>
+                        </Link>
                     </div>
                 </div>
             </div>

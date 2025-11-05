@@ -50,3 +50,18 @@ body {
     transform: rotate(360deg);
   }
 }
+.group:hover .animate-scroll {
+  animation-play-state: paused;
+}
+.animate-scroll {
+  animation: scrollLoop 4s linear infinite;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
