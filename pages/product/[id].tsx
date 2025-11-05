@@ -101,7 +101,7 @@ const ProductDetails = () => {
                     </div>
 
                     <button
-                        className="py-2 px-4 bg-gray-600 hover:bg-hoverSecondary font-bold text-white flex items-center gap-2"
+                        className="py-2 px-4 bg-gray-600 hover:bg-hoverPrimary font-bold text-white flex items-center gap-2"
                         onClick={handleAddToCart}
                     >
                         {loading ? (
