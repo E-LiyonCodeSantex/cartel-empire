@@ -16,3 +16,17 @@ export interface ProductCardProps {
 export interface LayoutProps {
     children: React.ReactNode
 }
+
+export interface RegisterUserProps{
+  userName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  termsAccepted: boolean;
+}
+
+export interface loginUserProps{
+  userName: string;
+  password: string;
+  rememberMe: boolean;
+}

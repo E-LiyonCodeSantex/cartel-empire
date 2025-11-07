@@ -3,6 +3,7 @@ import { PRODUCTS } from "@/constant/productCard";
 import { ProductCardProps } from "@/interface/index";
 import { shuffle } from 'lodash'; // optional, or write your own shuffle
 import { useEffect, useState } from 'react';
+import StickyPageHeader from "@/components/common/pageTitle";
 
 
 const BrandsPage = () => {
@@ -27,9 +28,7 @@ const BrandsPage = () => {
 
     return (
         <div className="w-full bg-gray-100 pt-14 pb-4 px-2 flex flex-col justify-center items-center gap-4">
-            <div className="w-full p-2 text-gray-800 flex justify-center font-bold items-center gap-4 border-b-2 border-gray-500">
-                <h1 className="font-bold text-2xl text-primary">Brands</h1>
-            </div>
+          <StickyPageHeader title="Brands" path="Home > Brands" />
 
             <div className="w-full  flex flex-wrap justify-center items-center gap-4">
                 {

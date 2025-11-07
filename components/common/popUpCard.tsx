@@ -15,9 +15,9 @@ const PopUpCard = ({ quantity, total, onClose }: PopUpCardProps) => {
 
     return (
         <div onClick={onClose}
-            className="w-full h-screen flex justify-center items-center fixed top-0 left-0 transform translate-50 z-50 bg-black/30">
+            className="w-full h-screen flex justify-center items-center fixed top-0 left-0 transform translate-50 z-50 bg-black/50">
             <div onClick={(e) => e.stopPropagation()}
-                className="w-[300px] h-[300px] bg-white border-2 border-gray-400 rounded-br-2xl rounded-tl-2xl shadow-lg ">
+                className="w-[300px] h-[300px] bg-gray-100 border-2 border-gray-400 rounded-br-2xl rounded-tl-2xl shadow-lg ">
                 <div className="w-full h-full flex flex-col justify-center items-center gap-4 p-4 text-gray-700">
                     <div className="w-[80px] h-[80px] rounded-full flex justify-center items-center bg-primary">
                         <CheckIcon className="w-16 h-16 text-white" />

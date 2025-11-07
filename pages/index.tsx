@@ -4,8 +4,6 @@ import LandingSlider from "@/components/common/landing";
 import ProductCard from "@/components/common/productCard";
 import { useState } from "react";
 import { PRODUCTS } from "@/constant/productCard";
-import PopUpCard from "@/components/common/popUpCard";
-import Link from 'next/link';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,13 +27,13 @@ export default function Home() {
       <div className="flex flex-col justify-start items-center w-full gap-4">
         <LandingSlider />
 
-        <div className="flex flex-nowrap flex-col justify-center items-start w-full gap-4 px-2 pt-2 overflow-hidden group">
+        <div className="flex flex-nowrap flex-col justify-center items-start w-full gap-4 px-2 pt-2 overflow-hidden">
           <div className="w-full p-2 text-gray-800 flex justify-between font-bold items-center gap-4 border-b-2 border-gray-500">
             <h1>popular Products</h1>
             <button className="text-secondary hover:text-hoverSecondary">View All</button>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto animate-scroll">
+          <div className="w-full  flex flex-nowrap overflow-x-auto justify-start items-center gap-4 no-scrollbar">
             {PRODUCTS.filter(product => product.tags?.toLowerCase().includes("popular")).map((product, index) => (
               <ProductCard key={`popular-${index}`} product={product} />
             ))}
@@ -48,12 +46,28 @@ export default function Home() {
             <button className="text-secondary hover:text-hoverSecondary">View All</button>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto animate-scroll">
+          <div className="w-full  flex flex-nowrap overflow-x-auto justify-start items-center gap-4 no-scrollbar">
             {
               PRODUCTS.filter(product =>
                 product.tags?.toLowerCase().includes("new")
               ).map((product, index) => (
                 <ProductCard key={`New-${index}`} product={product} />
+              ))
+            }
+          </div>
+        </div>
+        <div className="flex flex-nowrap flex-col justify-center items-start w-full gap-4 px-2 pt-2 overflow-hidden group">
+          <div className="w-full p-2 text-gray-800 flex justify-between font-bold items-center gap-4 border-b-2 border-gray-500">
+            <h1>Body spray</h1>
+            <button className="text-secondary hover:text-hoverSecondary"><a href="/spray">View All</a></button>
+          </div>
+
+          <div className="w-full  flex flex-nowrap overflow-x-auto justify-start items-center gap-4 no-scrollbar">
+            {
+              PRODUCTS.filter(product =>
+                product.category?.toLowerCase().includes("spray")
+              ).map((product, index) => (
+                <ProductCard key={`spray-${index}`} product={product} />
               ))
             }
           </div>
